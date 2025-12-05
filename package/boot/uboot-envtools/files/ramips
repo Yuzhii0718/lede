@@ -67,6 +67,7 @@ xiaomi,redmi-router-ac2100)
 	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x1000" "0x20000"
 	;;
 fcj,g-ax1800-f|\
+fcj,g-ax1800-f-sw|\
 xiaomi,mi-router-cr660x)
 	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x10000" "0x20000"
 	;;
