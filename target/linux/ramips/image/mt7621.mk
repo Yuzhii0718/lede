@@ -715,7 +715,6 @@ TARGET_DEVICES += elecom_wrc-2533gst2
 
 define Device/fcj_g-ax1800-f
   $(Device/dsa-migration)
-  $(Device/uimage-lzma-loader)
   DEVICE_VENDOR := FCJ
   DEVICE_MODEL := G-AX1800-F
   BLOCKSIZE := 128k
@@ -733,21 +732,8 @@ endef
 TARGET_DEVICES += fcj_g-ax1800-f
 
 define Device/fcj_g-ax1800-f-sw
-  $(Device/dsa-migration)
-  $(Device/uimage-lzma-loader)
-  DEVICE_VENDOR := FCJ
+  $(Device/fcj_g-ax1800-f)
   DEVICE_MODEL := G-AX1800-F-SW
-  BLOCKSIZE := 128k
-  PAGESIZE := 2048
-  UBINIZE_OPTS := -E 5
-  KERNEL_SIZE := 8192k
-  IMAGE_SIZE := 121344k
-  IMAGES += factory.bin
-  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
-	check-size
-  DEVICE_PACKAGES += kmod-mt7915-firmware wpad-openssl uboot-envtools
-  SUPPORTED_DEVICES += fcj,g-ax1800-f-sw
 endef
 TARGET_DEVICES += fcj_g-ax1800-f-sw
 
