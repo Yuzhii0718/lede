@@ -69,7 +69,7 @@ case "$board" in
 			macaddr_setbit_la "$(macaddr_add $hw_mac_addr 0x100000)" > /sys${DEVPATH}/macaddress
 		fi
 		;;
-	qihoo,360t6gs)
+	qihoo,360t6gs*)
 		[ "$PHYNBR" = "0" ] && macaddr_add "$(mtd_get_mac_ascii factory lanMac)" 1 > /sys${DEVPATH}/macaddress
 		[ "$PHYNBR" = "1" ] && macaddr_add "$(mtd_get_mac_ascii factory lanMac)" 2 > /sys${DEVPATH}/macaddress
 		;;

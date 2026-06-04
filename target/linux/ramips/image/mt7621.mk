@@ -1504,6 +1504,23 @@ define Device/qihoo_360t6gs
 endef
 TARGET_DEVICES += qihoo_360t6gs
 
+define Device/qihoo_360t6gs-nmbm
+  $(Device/dsa-migration)
+  DEVICE_VENDOR := Qihoo
+  DEVICE_MODEL := 360T6GS-NMBM
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  UBINIZE_OPTS := -E 5
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 121856k
+  IMAGES += firmware.bin
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/firmware.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
+	check-size
+  DEVICE_PACKAGES := kmod-mt7915-firmware uboot-envtools
+endef
+TARGET_DEVICES += qihoo_360t6gs-nmbm
+
 define Device/raisecom_msg1500-x-00
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
