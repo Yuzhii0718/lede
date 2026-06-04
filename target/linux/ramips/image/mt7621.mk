@@ -1484,6 +1484,26 @@ define Device/planex_vr500
 endef
 TARGET_DEVICES += planex_vr500
 
+define Device/qihoo_360t6gs
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  DEVICE_VENDOR := Qihoo
+  DEVICE_MODEL := 360T6GS
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  UBINIZE_OPTS := -E 5
+  KERNEL_SIZE := 4096k
+  LOADER_TYPE := bin
+  KERNEL := kernel-bin | append-dtb | lzma | loader-kernel | lzma | uImage lzma
+  IMAGE_SIZE := 130048k
+  IMAGES += firmware.bin
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/firmware.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
+	check-size
+  DEVICE_PACKAGES := kmod-mt7915-firmware uboot-envtools
+endef
+TARGET_DEVICES += qihoo_360t6gs
+
 define Device/raisecom_msg1500-x-00
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)

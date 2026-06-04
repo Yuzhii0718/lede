@@ -104,6 +104,7 @@ platform_do_upgrade() {
 	netgear,wac104|\
 	netgear,wac124|\
 	netis,wf2881|\
+	qihoo,360t6gs|\
 	raisecom,msg1500-x-00|\
 	sercomm,na502|\
 	xiaomi,mi-router-3g|\
