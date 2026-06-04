@@ -30,7 +30,7 @@ case "$board" in
 	fcj,g-ax1800-f|\
 	fcj,g-ax1800-f-sw)
 		[ "$PHYNBR" = "1" ] && \
-			macaddr_add "$(mtd_get_mac_binary Factory 0x4)" 5 > /sys${DEVPATH}/macaddress
+			macaddr_add "$(mtd_get_mac_binary factory 0x4)" 5 > /sys${DEVPATH}/macaddress
 		;;
 	glinet,gl-mt1300)
 		[ "$PHYNBR" = "1" ] && \
