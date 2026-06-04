@@ -65,7 +65,8 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "3:wan" "6u@eth0" "5u@eth1"
 		;;
-	fcj,g-ax1800-f-sw)
+	fcj,g-ax1800-f-sw|\
+	qihoo,360t6gs-nmbm-gsw)
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "3:lan" "6u@eth0" "5u@eth1"
 		;;

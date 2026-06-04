@@ -1,0 +1,13 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+
+#include "mt7621_qihoo_360t6gs-nmbm.dts"
+
+/ {
+	compatible = "qihoo,360t6gs-nmbm-gsw", "mediatek,mt7621-soc";
+	model = "Qihoo 360 T6GS (NMBM-GSW)";
+};
+
+&gsw {
+	mediatek,portmap = "lllll";
+	status = "okay";
+};

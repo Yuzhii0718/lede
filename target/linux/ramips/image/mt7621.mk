@@ -1521,6 +1521,12 @@ define Device/qihoo_360t6gs-nmbm
 endef
 TARGET_DEVICES += qihoo_360t6gs-nmbm
 
+define Device/qihoo_360t6gs-nmbm-gsw
+  $(Device/qihoo_360t6gs-nmbm)
+  DEVICE_MODEL := 360T6GS-NMBM-GSW
+endef
+TARGET_DEVICES += qihoo_360t6gs-nmbm-gsw
+
 define Device/raisecom_msg1500-x-00
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
